@@ -1,18 +1,16 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nopeus — Software Engineering & Digital Products',
-  description:
-    'Full-stack web platforms, custom software engineering, and digital product development by Nopeus DOO.',
+  title: 'Nopeus',
+  description: 'Nopeus — Podgorica, Montenegro',
   metadataBase: new URL('https://nopeus.me'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Nopeus — Software Engineering & Digital Products',
-    description:
-      'Full-stack web platforms, custom software engineering, and digital product development.',
+    title: 'Nopeus',
+    description: 'Podgorica, Montenegro',
     url: 'https://nopeus.me',
     siteName: 'Nopeus',
     type: 'website',
@@ -23,14 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: '#081021',
+  colorScheme: 'dark',
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-zinc-800">
+    <html lang="en" className="dark h-full overflow-hidden bg-[#081021]">
+      <body className="h-dvh w-full overflow-hidden bg-[#081021] text-[#f4f7fc] antialiased selection:bg-[#3b82f6]/30 selection:text-white">
         {children}
       </body>
     </html>
